@@ -16,10 +16,47 @@
       <ion-item>
         <ion-input #number placeholder="Enter Mobile Number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-input value="OTP Number" [readonly]="true"></ion-input>
+      <!-- <ion-item>
+        <ion-input value="OTP" [readonly]="true"></ion-input>
+      </ion-item> -->
+      <!-- <ion-button expand="block">Login</ion-button> -->
+      <ion-item *ngIf="showOTPInput" class="OTP-border">
+        <ion-input
+          name="1"
+          readonly
+          type="tel"
+          [(ngModel)]="OTP"
+          maxlength="6"
+          class="otpinput"
+          padding-horizontal
+        >
+        </ion-input>
       </ion-item>
-      <ion-button expand="block">Login</ion-button>
+      <ion-row *ngIf="showOTPInput">
+        <ion-col>
+          <ion-text class="small">{{OTPmessage}}</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button
+            *ngIf="!showOTPInput"
+            expand="block"
+            (click)="next()"
+            class="transition"
+          >
+            <strong> Next</strong></ion-button
+          >
+          <ion-button
+            *ngIf="showOTPInput"
+            expand="block"
+            (click)="register()"
+            class="transition"
+          >
+            <strong> Register</strong></ion-button
+          >
+        </ion-col>
+      </ion-row>
     </ion-list>
   </div>
 </ion-content>
