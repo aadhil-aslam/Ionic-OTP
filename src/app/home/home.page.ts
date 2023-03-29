@@ -12,7 +12,7 @@ import { ToastController } from '@ionic/angular';
 
 
 export class HomePage {
-  OTP: string = '';
+  OTP: any = '';
   showOTPInput: boolean = false;
   OTPmessage: string = 'An OTP is sent to your number. You should receive it in 15 s'
   constructor(private toastCtrl: ToastController) {  }
