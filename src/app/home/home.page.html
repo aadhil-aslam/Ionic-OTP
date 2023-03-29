@@ -1,20 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Login </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Login</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-list>
+      <ion-item>
+        <ion-input #number placeholder="Enter Mobile Number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input value="OTP Number" [readonly]="true"></ion-input>
+      </ion-item>
+      <ion-button expand="block">Login</ion-button>
+    </ion-list>
   </div>
 </ion-content>
